@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: hsl(228, 39%, 23%);
+  font-family: "Be Vietnam", sans-serif;
+}
+ul {
+  list-style: none;
+}
+.navigation {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: aqua;
+}
+
+.nav-links {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  font-size: 16px;
+}
+ul > li > a {
+  text-decoration: none;
+}
+.btn {
+  background-color: hsl(12, 88%, 59%);
+  width: 140px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 16px;
+  color: whitesmoke;
+  border: none;
+  margin-right: 20px;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: whitesmoke;
+  margin: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+}
+.burger {
+  display: none;
+}
+
+@media only screen and (max-width: 950px) {
+  .navigation {
+    justify-content: space-between;
+  }
+  .btn {
+    display: none;
+  }
+ 
+  .ul-container {
+    position: absolute;
+    width: 100%;
+    right: 0px;
+    height: 82vh;
+    top: 8vh;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  
+  }
+  .ul-container li{
+    opacity: 0;
+
+  }
+  .burger {
+    display: block;
+    margin: 0 50px;
+  }
+  .logo {
+    margin: 50px;
+  }
+
+}
+@media only screen and (max-width: 375px) {
+  .burger {
+    margin: 0 10px;
+  }
+  .logo {
+    margin: 10px;
+  }
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.nav-active {
+  transform: translateX(0);
+}
+
+.toggle .link-1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .link-2 {
+  opacity: 0;
+}
+.toggle .link-3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
